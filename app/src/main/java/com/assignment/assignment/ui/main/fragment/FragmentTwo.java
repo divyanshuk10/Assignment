@@ -121,17 +121,23 @@ public class FragmentTwo extends Fragment {
     mViewModel.addCommentEvent.observe(getActivity(), eventState -> {
       switch (eventState) {
         case DISCONNECTED:
+          Toast.makeText(getActivity(), "Disconnected", Toast.LENGTH_SHORT).show();
           break;
         case PROGRESS:
+          Toast.makeText(getActivity(), "PROGRESS", Toast.LENGTH_SHORT).show();
           break;
         case SUCCESS:
+          Toast.makeText(getActivity(), "SUCCESS", Toast.LENGTH_SHORT).show();
           fetchComments(data.getOwner().getId());
           break;
         case ERROR:
+          Toast.makeText(getActivity(), "ERROR", Toast.LENGTH_SHORT).show();
           break;
         case EMPTY_DATA:
+          Toast.makeText(getActivity(), "No Comments", Toast.LENGTH_SHORT).show();
           break;
         case LIMIT_REACHED:
+          Toast.makeText(getActivity(), "LIMIT_REACHED", Toast.LENGTH_SHORT).show();
           break;
       }
     });
@@ -146,19 +152,25 @@ public class FragmentTwo extends Fragment {
     mViewModel.fetchCommentEvent.observe(getActivity(), eventState -> {
       switch (eventState) {
         case DISCONNECTED:
+          Toast.makeText(getActivity(), "Disconnected", Toast.LENGTH_SHORT).show();
           break;
         case PROGRESS:
+          Toast.makeText(getActivity(), "PROGRESS", Toast.LENGTH_SHORT).show();
           break;
         case SUCCESS:
           List<Github> commentsList = mViewModel.commentList.getValue();
           adapter.clearData();
           adapter.setRepoResponse(commentsList);
+          Toast.makeText(getActivity(), "SUCCESS", Toast.LENGTH_SHORT).show();
           break;
         case ERROR:
+          Toast.makeText(getActivity(), "ERROR", Toast.LENGTH_SHORT).show();
           break;
         case EMPTY_DATA:
+          Toast.makeText(getActivity(), "No Comments", Toast.LENGTH_SHORT).show();
           break;
         case LIMIT_REACHED:
+          Toast.makeText(getActivity(), "LIMIT_REACHED", Toast.LENGTH_SHORT).show();
           break;
       }
     });

@@ -2,7 +2,6 @@ package com.assignment.assignment.ui.main;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -72,7 +71,6 @@ public class MainActivity extends AppCompatActivity
   }
 
   @Override public void onItemClicked(GithubResponse data) {
-    Toast.makeText(this, "SENDING ARGUMENT", Toast.LENGTH_SHORT).show();
     fragment2.setData(data);
     bottomNavigationView.setSelectedItemId(R.id.action_tab_2);
   }
